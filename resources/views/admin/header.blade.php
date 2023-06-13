@@ -148,12 +148,16 @@
             <p class="p-3 mb-0 text-center">See all notifications</p>
           </div>
         </li>
-        <li>
+
+      </ul>
+      <ul>
+        <li class="nav-item dropdown align-items-center my-2" >
+
             <x-app-layout>
 
             </x-app-layout>
-        </li>
+          </li>
+      </ul>
 
     </div>
-
   </nav>
