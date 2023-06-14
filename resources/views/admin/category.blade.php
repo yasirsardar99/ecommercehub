@@ -21,15 +21,49 @@
 
         <div class="main-panel">
             <div class="content-wrapper">
+
+                @if(session()->has('message'))
+
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+
+                        {{session()->get('message')}}
+                </div>
+
+                @endif
+
                 <div class="text-center">
                     <h2> <b>ADD CATEGORY:</b> </h2>
                 </div>
 
-                <div class="text-center my-5 ">
-                    <input type="text" name="name" id="category_name" class="input-feild col-md-6 " style="color: #000000" placeholder="Enter your Category Name">
-                    <input type="submit" name="submit" value="add Category" style="color: #ffffff; padding:12px; " class=" btn btn-warning  rounded-0 col-md-3">
-                </div>
+                <form action="{{url('/add_category')}}" method="POST">
+                    @csrf
+                    <div class="text-center my-5 ">
+                        <input type="text" name="category" id="category_name" class="input-feild col-md-6 " style="color: #000000" placeholder="Enter your Category Name">
+                        <input type="submit" name="submit" value="add Category" style="color: #ffffff; padding:12px; " class=" btn btn-warning  rounded-0 col-md-3">
+                    </div>
+                </form>
+
+                <table class="table table-bordered trble-striped">
+                    <thead>
+                        <tr class="text-center" >
+                            <th class="text-light"> <strong>Category Name</strong> </th>
+                        <th class="text-light"> <strong>Action</strong> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-center text-light">
+                            <td>shalwar kamees</td>
+                            <td>
+                                <a class="btn btn-sm btn-danger mx-2" href="#">DELETE</a>
+                                <a class="btn btn-sm btn-success" href="#">show</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
             </div>
+
+
         </div>
 
 
